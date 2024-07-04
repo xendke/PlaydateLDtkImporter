@@ -628,11 +628,12 @@ function _.process_level_data( level_data )
 		if #layer_data.autoLayerTiles>0 then
 			tiles_data = layer_data.autoLayerTiles
 		end
+		layer.tiles = {}
+		layer.tilemap_width = layer_data.__cWid
+
 		if #tiles_data>0 then
-			layer.tilemap_width = layer_data.__cWid
 			layer.tileset_uid = layer_data.__tilesetDefUid
 
-			layer.tiles = {}
 
 			local gsize = layer.grid_size
 			local tileset_data = _tilesets[ layer.tileset_uid ]
